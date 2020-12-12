@@ -26,13 +26,13 @@ public class AsIntStreamTest {
     @Test
     public void testStreamToArray() {
         int[] expResult = {-5, 3, 1, 0, 3, -2};
-        int[] result = AsIntStream.streamToArray(intStream);
+        int[] result = intStream.toArray();
         assertArrayEquals(expResult, result);        
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testEmptyAverage() {
-        double result = intStreamEmpty.average();
+        intStreamEmpty.average();
     }
 
     @Test
@@ -44,7 +44,7 @@ public class AsIntStreamTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testEmptyMax() {
-        int result = intStreamEmpty.max();
+        intStreamEmpty.max();
     }
 
     @Test
@@ -56,7 +56,7 @@ public class AsIntStreamTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testEmptyMin() {
-        int result = intStreamEmpty.min();
+        intStreamEmpty.min();
     }
 
     @Test
