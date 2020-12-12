@@ -72,12 +72,12 @@ public class AsIntStreamTest {
         assertEquals(0, intStreamEmpty.count());
         assertEquals(6, intStream.count());
     }
-
+    */
     @Test
     public void testSum() {
         assertEquals(0, intStreamEmpty.sum());
         assertEquals(0, intStream.sum());
-    }*/
+    }
 
     @Test
     public void testFilter() {
