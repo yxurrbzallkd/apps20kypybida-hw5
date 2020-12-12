@@ -66,20 +66,18 @@ public class AsIntStreamTest {
         assertEquals(expResult, result);
     }
 
+    /*
     @Test
     public void testCount() {
-        assertEquals(6, intStream.count());  
-    }
-
-    @Test
-    public void testEmptyCount() {
         assertEquals(0, intStreamEmpty.count());
+        assertEquals(6, intStream.count());
     }
+    */
 
     @Test
     public void testSum() {
         assertEquals(0, intStreamEmpty.sum());
-        assertEquals(0, intStream.sum());  
+        assertEquals(0, intStream.sum());
     }
 
     @Test
