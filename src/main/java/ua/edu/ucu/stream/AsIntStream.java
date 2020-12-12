@@ -74,7 +74,7 @@ public class AsIntStream implements IntStream {
     @Override
     public Integer sum() {
         Integer sum = 0;
-        for (int i: this.values) {
+        for (Integer i: this.values) {
             sum += i;
         }
         return sum;
