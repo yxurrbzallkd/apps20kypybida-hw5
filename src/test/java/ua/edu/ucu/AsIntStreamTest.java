@@ -27,7 +27,7 @@ public class AsIntStreamTest {
     public void testStreamToArray() {
         int[] expResult = {-5, 3, 1, 0, 3, -2};
         int[] result = intStream.toArray();
-        assertArrayEquals(expResult, result);        
+        assertArrayEquals(expResult, result);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -39,7 +39,7 @@ public class AsIntStreamTest {
     public void testAverage() {
         double expResult = 0.0;
         double result = intStream.average();
-        assertEquals(expResult, result);        
+        assertEquals(expResult, result, 0.00001);
     }
 
     @Test(expected = IllegalArgumentException.class)
