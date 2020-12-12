@@ -74,8 +74,12 @@ public class AsIntStreamTest {
     }
     */
     @Test
-    public void testSum() {
+    public void testEmptySum() {
         assertEquals(0, intStreamEmpty.sum());
+    }
+
+    @Test
+    public void testSum() {
         assertEquals(0, intStream.sum());
     }
 
