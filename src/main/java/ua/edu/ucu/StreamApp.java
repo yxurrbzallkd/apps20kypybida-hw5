@@ -24,4 +24,53 @@ public class StreamApp {
         intStream.forEach(x -> str.append(x));
         return str.toString();
     }
+
+    public static String streamReduce(IntStream intStream) {        
+        StringBuilder str = new StringBuilder();
+        intStream.forEach(x -> str.append(x));
+        return str.toString();
+    }
+
+    public static String streamFlatMap(IntStream intStream) {        
+        StringBuilder str = new StringBuilder();
+        intStream.forEach(x -> str.append(x));
+        return str.toString();
+    }
+
+    public static String streamMap(IntStream intStream) {        
+        StringBuilder str = new StringBuilder();
+        intStream.forEach(x -> str.append(x));
+        return str.toString();
+    }
+
+    public static String streamFilter(IntStream intStream) {        
+        StringBuilder str = new StringBuilder();
+        intStream.forEach(x -> str.append(x));
+        return str.toString();
+    }
+
+    public static String streamSum(IntStream intStream) {        
+        StringBuilder str = new StringBuilder();
+        intStream.forEach(x -> str.append(x));
+        return str.toString();
+    }
+
+    public static String streamMin(IntStream intStream) {        
+        StringBuilder str = new StringBuilder();
+        intStream.forEach(x -> str.append(x));
+        return str.toString();
+    }
+
+    public static String streamMax(IntStream intStream) {        
+        StringBuilder str = new StringBuilder();
+        intStream.forEach(x -> str.append(x));
+        return str.toString();
+    }
+
+    public static String streamAverage(IntStream intStream) {        
+        StringBuilder str = new StringBuilder();
+        intStream.forEach(x -> str.append(x));
+        return str.toString();
+    }
 }
+

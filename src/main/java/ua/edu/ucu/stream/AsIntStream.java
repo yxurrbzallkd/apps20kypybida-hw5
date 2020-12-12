@@ -23,15 +23,22 @@ public class AsIntStream implements IntStream {
 
     @Override
     public Double average() {
+        int length = this.values.length();
+        if (this.values.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
         Double avg = 0.0;
         for (int i: this.values) {
             avg += i;
         }
-        return avg/this.values.length();
+        return avg/length;
     }
 
     @Override
     public Integer max() {
+        if (this.values.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
         Integer max = Integer.MIN_VALUE;
         for (int i: this.values) {
             if (i > max) {
@@ -43,6 +50,9 @@ public class AsIntStream implements IntStream {
 
     @Override
     public Integer min() {
+        if (this.values.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
         Integer min = Integer.MAX_VALUE;
         for (int i: this.values) {
             if (i < min) {
@@ -101,7 +111,7 @@ public class AsIntStream implements IntStream {
     public IntStream flatMap(IntToIntStreamFunction func) {
         Queue<Integer> q = new Queue<Integer>();
         for (int i: this.values) {
-            for (int j: func.applyAsIntStream(i).toArray()) {
+            for (int j: (func.applyAsIntStream(i)).toArray()) {
                 q.enqueue(j);
             }
         }
@@ -111,24 +121,25 @@ public class AsIntStream implements IntStream {
     @Override
     public int reduce(int identity, IntBinaryOperator op) {
         int reduced = 0;
-        for (int i: this.values) {
-            reduced += op.apply(identity, i);
+        int[] arr = this.toArray();
+        if (arr.length == 0) {
+            throw new IllegalArgumentException();
+        }
+        reduced += op.apply(identity, arr[0]);
+        for (int i = 1; i < arr.length; i++) {
+            reduced = op.apply(reduced, arr[i]);
         }
         return reduced;
     }
 
     @Override
     public int[] toArray() {
-        //System.out.println(this.values.length());
         int[] array = new int[this.values.length()];
-        //System.out.println(array.length);
         int j = 0;
         for (int n: this.values) {
             array[j] = n;
-            //System.out.println(n+" "+array[j]);
             j++;
         }
-        //System.out.println("array "+Arrays.toString(array));
         return array;
     }
 }
