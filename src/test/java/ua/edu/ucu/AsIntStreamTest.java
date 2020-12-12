@@ -39,7 +39,7 @@ public class AsIntStreamTest {
     public void testAverage() {
         double expResult = 0.0;
         double result = intStream.average();
-        assertArrayEquals(expResult, result);        
+        assertEquals(expResult, result);        
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -51,7 +51,7 @@ public class AsIntStreamTest {
     public void testMax() {
         int expResult = 3;
         int result = intStream.max();
-        assertArrayEquals(expResult, result);        
+        assertEquals(expResult, result);        
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -63,19 +63,19 @@ public class AsIntStreamTest {
     public void testMin() {
         int expResult = -5;
         int result = intStream.min();
-        assertArrayEquals(expResult, result);
+        assertEquals(expResult, result);
     }
 
     @Test
     public void testCount() {
-        assertArrayEquals(0, intStreamEmpty.count());
-        assertArrayEquals(6, intStream.count());  
+        assertEquals(0, intStreamEmpty.count());
+        assertEquals(6, intStream.count());  
     }
 
     @Test
     public void testSum() {
-        assertArrayEquals(0, intStreamEmpty.sum());
-        assertArrayEquals(0, intStream.sum());  
+        assertEquals(0, intStreamEmpty.sum());
+        assertEquals(0, intStream.sum());  
     }
 
     @Test
@@ -125,7 +125,7 @@ public class AsIntStreamTest {
                 return left+right;
             }
         };
-        assertArrayEquals(5, intStream.reduce(5, op)); 
+        assertEquals(5, intStream.reduce(5, op)); 
     }
 
     @Test(expected = IllegalArgumentException.class)
