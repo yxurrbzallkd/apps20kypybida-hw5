@@ -68,8 +68,12 @@ public class AsIntStreamTest {
 
     @Test
     public void testCount() {
-        assertEquals(0, intStreamEmpty.count());
         assertEquals(6, intStream.count());  
+    }
+
+    @Test
+    public void testEmptyCount() {
+        assertEquals(0, intStreamEmpty.count());
     }
 
     @Test
